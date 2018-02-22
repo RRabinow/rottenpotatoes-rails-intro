@@ -1,10 +1,10 @@
--#  This file is app/views/movies/index.html.haml
+
 %h1 All Movies
 
 %table#movies
   %thead
     %tr
-      %th{:class=>("hilite" if @sort_column == "title")} = link_to 'Movie Title', movies_path(:sort_style=>'title'), :id=>"title_header" 
+      %th{:class=>("hilite" if @sort_column == "title")} = link_to 'Movie Title', movies_path(:sort_style=>'title'), :id="title_header" 
       %th Rating
       %th Release Date
       %th More Info
