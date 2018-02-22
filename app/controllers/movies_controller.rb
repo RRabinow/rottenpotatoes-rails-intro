@@ -11,8 +11,9 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movies = Movie.find(:all, :order =>(params[:sort_by]))
-    @sort_column = params[:sort_by]
+
+    @movies = Movie.find(:all, :order =>(params[:sort_style]))
+    @sort_column = params[:sort_style]
   end
 
   def new
