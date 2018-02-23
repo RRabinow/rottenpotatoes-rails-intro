@@ -12,6 +12,11 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
+    @all_ratings = ["G", "PG", "PG-13", "R"]
+    if (params[:ratings] != nil)
+      @selected_ratings = params[:ratings]
+      @movies = @movies.find_all{ |m| @selected_ratings.include?(m.rating)}
+    end
     if(params[:sort_by] == "title")
       @movies = @movies.order(:title)
     end
